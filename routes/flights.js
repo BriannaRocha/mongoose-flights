@@ -3,8 +3,8 @@ import * as flightsCtrl from '../controllers/flights.js'
 
 const router = Router()
 
-// GET http://localhost:3000/movies
-router.get('/', moviesCtrl.index)
+// GET http://localhost:3000/flights
+router.get('/', flightsCtrl.index)
 
 
 

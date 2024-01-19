@@ -1,0 +1,44 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Title: </div>
+		<div>
+      <%= flight.title %> 
+      <a href="/flights/<%= flight._id %>/edit">
+        <button>Edit Flight</button>
+      </a>
+    </div>
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <div>Flight Number: </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs Date & Time: </div>
+    <div><%= flight.departs %></div>
+		<%# start entrees list %>
+    <div>Meal Entrees:</div>
+    <ul>
+      <% flight.entrees.forEach(entreesMeal => { %>
+        <li><%= entreesMeal.name %></li>
+      <% }) %>
+    </ul>
+    <%# end entrees list %>
+  </section>
+	<%# add to entrees form below this comment %>
+  <form id="add-meal-to-entrees" action="/flights/<%= flight._id %>/meals" method="POST">
+    <select name="mealId">
+      <% meals.forEach(meal => { %>
+        <option value="<%= meal._id %>"><%= meal.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add to Meals</button>
+  </form>
+</main>
+
+
+<%- include('../partials/footer') %>
