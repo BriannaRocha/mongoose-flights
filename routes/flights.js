@@ -5,46 +5,20 @@ const router = Router()
 
 // GET http://localhost:3000/flights
 router.get('/', flightsCtrl.index)
-
-
-
-
-// GET http://localhost:3000/movies/new
-//router.get('/new', moviesCtrl.new)
-
-
-
-// GET http://localhost:3000/movies/:movieId
-//router.get('/:movieId', moviesCtrl.show)
-
-
-
-// GET http://localhost:3000/movies/:movieId/edit
-//router.get('/:movieId/edit', moviesCtrl.edit)
-
-
-
-// POST http://localhost:3000/movies
-//router.post('/', moviesCtrl.create)
-
-
-
-// POST http://localhost:3000/movies/:movieId/reviews
-//router.post('/:movieId/reviews', moviesCtrl.createReview)
-
-
-
-// POST http://localhost:3000/movies/:movieId/performers
-//router.post('/:movieId/performers', moviesCtrl.addToCast)
-
-
-
-// DELETE http://localhost:3000/movies/:movieId
-//router.delete('/:movieId', moviesCtrl.delete)
-
-
-// PUT http://localhost:3000/movies/:movieId
-//router.put('/:movieId', moviesCtrl.update)
+// GET http://localhost:3000/flights/new
+router.get('/new', flightsCtrl.new)
+// GET http://localhost:3000/flights/:flightId
+router.get('/:flightId', flightsCtrl.show)
+// GET http://localhost:3000/flights/:flightId/edit
+router.get('/:flightId/edit', flightsCtrl.edit)
+// POST http://localhost:3000/flights
+router.post('/', flightsCtrl.create)
+// POST http://localhost:3000/flights/:flightId/meals
+router.post('/:flightId/meals', flightsCtrl.addToEntrees)
+// DELETE http://localhost:3000/flights/:flightId
+router.delete('/:flightId', flightsCtrl.delete)
+// PUT http://localhost:3000/flgihts/:flightId
+router.put('/:flightId', flightsCtrl.update)
 
 export {
   router
