@@ -22,7 +22,8 @@ const flightSchema = new Schema({
     default: function() {
       return new Date().getFullYear() + 1
     }
-  }
+  },
+  entrees: [{type: Schema.Types.ObjectId, ref: 'Meal'}]
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
