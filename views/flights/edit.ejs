@@ -28,8 +28,15 @@
       <option value="DEN">LAX</option>
       <option value="SAN">SAN</option>
     </select>
-
-
+    <label for="flightNo-select">Flight Number:</label>
+    <input 
+      type="number"
+      value="<%= flight.flightNo %>"
+      name="flightNo" 
+      id="flightNo-select"
+      min="10"
+      max="9999"
+    >
     <label for="departs-input">Departs:</label>
     <input 
       type="datetime-local"
@@ -37,24 +44,7 @@
       name="departs" 
       id="departs-input"
     >
-
-
-
-
-    <input 
-      type="text"
-      value="<%= movie.releaseYear %>"
-      name="releaseYear" 
-      id="release-year-input"
-    >
-    <label for="now-showing-checkbox">Now Showing:</label>
-    <input 
-      <%= movie.nowShowing ? 'checked' : '' %>
-      type="checkbox"
-      name="nowShowing" 
-      id="now-showing-checkbox"
-    >
-    <button type="submit">Save Movie</button>
+    <button type="submit">Save Flight</button>
   </form>
 </main>
 
