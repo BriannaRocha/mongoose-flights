@@ -1,4 +1,4 @@
-import { Performer } from "../models/performer.js"
+import { Meal } from "../models/meal.js"
 
 function newPerformer(req, res) {
   Performer.find({}).sort('name')
