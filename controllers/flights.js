@@ -3,7 +3,7 @@ import { Meal } from "../models/meal.js"
 
 function newFlight(req, res) {
   res.render('flights/new', {
-    title: 'Add Flight'
+    title: '✈️ Add Flight'
   })
 }
 
