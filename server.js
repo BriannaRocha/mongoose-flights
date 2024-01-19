@@ -9,15 +9,20 @@ import './config/database.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
+import { router as flightsRouter } from './routes/flights.js'
+//import { router as mealsRouter } from './routes/meals.js'
 
 // create the express app
 const app = express()
 
 // view engine setup
+app.set(
+  'views',
+  path.join(path.dirname(fileURLToPath(import.meta.url)), 'views')
+)
 app.set('view engine', 'ejs')
 
-// basic middleware
+// middleware
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -27,9 +32,10 @@ app.use(
   )
 )
 
-// mount imported routes
+// mounted routers
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/flights', flightsRouter)
+app.use('/meals', mealsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
