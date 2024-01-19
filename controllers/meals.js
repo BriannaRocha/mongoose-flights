@@ -1,31 +1,31 @@
 import { Meal } from "../models/meal.js"
 
-function newPerformer(req, res) {
-  Performer.find({}).sort('name')
-  .then(performers => {
-    res.render('performers/new', {
-      performers: performers,
-      title: 'Add Performer'
+function newMeal(req, res) {
+  Meal.find({}).sort('name')
+  .then(meals => {
+    res.render('meals/new', {
+      meals: meals,
+      title: 'Add Meal'
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/movies')
+    res.redirect('/flights')
   })
 }
 
 function create(req, res) {
-  Performer.create(req.body)
-  .then(performer => {
-    res.redirect('/performers/new')
+  Meal.create(req.body)
+  .then(meal => {
+    res.redirect('/meals/new')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/performers/new')
+    res.redirect('/meals/new')
   })
 }
 
 export {
-  newPerformer as new,
+  newMeal as new,
   create
 }
